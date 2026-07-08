@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Universe</title>
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- White light of the wormhole exit -->
+  <div id="veil"></div>
+
+  <!-- Living starfield background -->
+  <canvas id="sky"></canvas>
+
+  <div id="page">
+
+    <nav id="nav">
+      <a class="logo" href="#hero">✦ My Universe</a>
+      <div class="nav-links">
+        <a href="#resume">Résumé</a>
+        <a href="#story">My Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#bucket">Someday</a>
+        <a class="back-hole" href="index.html">◐ Back to the black hole</a>
+      </div>
+    </nav>
+
+    <!-- ============ Prologue ============ -->
+    <header id="hero">
+      <p class="hero-eyebrow">Through the black hole, you&rsquo;ve arrived</p>
+      <h1>[Your Name]&rsquo;s Universe</h1>
+      <p class="hero-line">[Write a line that belongs to you — e.g. What we gaze at is not the stars, but the countless selves we might become.]</p>
+      <a class="scroll-hint" href="#resume">↓ scroll to explore</a>
+    </header>
+
+    <!-- ============ Résumé ============ -->
+    <section id="resume" class="reveal">
+      <h2>Résumé</h2>
+      <p class="sec-sub">WHO I AM</p>
+
+      <div class="resume-grid">
+        <div class="card">
+          <h3>About Me</h3>
+          <p>[One sentence about yourself: who you are, what you do, what you love.]</p>
+          <ul class="meta">
+            <li>📍 [Your city]</li>
+            <li>✉️ [Your email]</li>
+            <li>🔗 [Personal link / GitHub]</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Education</h3>
+          <div class="item">
+            <span class="when">[2018 – 2022]</span>
+            <strong>[School name]</strong>
+            <p>[Major · Degree, or the one thing from school worth remembering]</p>
+          </div>
+          <div class="item">
+            <span class="when">[Year – Year]</span>
+            <strong>[School / Program]</strong>
+            <p>[A note about it]</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Experience</h3>
+          <div class="item">
+            <span class="when">[2022 – Present]</span>
+            <strong>[Company · Role]</strong>
+            <p>[What you do here, and what you&rsquo;ve built.]</p>
+          </div>
+          <div class="item">
+            <span class="when">[Year – Year]</span>
+            <strong>[Company · Role]</strong>
+            <p>[A chapter worth writing down.]</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Skills</h3>
+          <div class="tags">
+            <span>[Skill 1]</span>
+            <span>[Skill 2]</span>
+            <span>[Skill 3]</span>
+            <span>[Skill 4]</span>
+            <span>[Skill 5]</span>
+            <span>[Skill 6]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ My Story ============ -->
+    <section id="story" class="reveal">
+      <h2>My Story</h2>
+      <p class="sec-sub">THE ROAD SO FAR</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <span class="tl-year">[Year]</span>
+          <h3>[Chapter title — e.g. Departure]</h3>
+          <p>[Write this chapter: where it began, who you met, how it changed you.]</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <span class="tl-year">[Year]</span>
+          <h3>[Chapter title — e.g. The Turn]</h3>
+          <p>[The moment that made you who you are now.]</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <span class="tl-year">[Year]</span>
+          <h3>[Chapter title — e.g. Far From Home]</h3>
+          <p>[A journey, a goodbye, a fresh start.]</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <span class="tl-year">Now</span>
+          <h3>[Chapter title — e.g. This Moment]</h3>
+          <p>[Where you are, and where you&rsquo;re heading. To be continued…]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Gallery ============ -->
+    <section id="gallery" class="reveal">
+      <h2>Gallery</h2>
+      <p class="sec-sub">PHOTOS I LOVE</p>
+      <div id="photo-grid"></div>
+      <p class="gallery-tip">Name your photos 1.jpg, 2.jpg… drop them into the photos folder, then edit the captions at the top of js/home.js.</p>
+    </section>
+
+    <!-- ============ Someday ============ -->
+    <section id="bucket" class="reveal">
+      <h2>Someday</h2>
+      <p class="sec-sub">LIGHT UP THE PLACES I&rsquo;LL GO</p>
+
+      <div class="bucket-progress">
+        <div class="bar"><div id="bucket-fill"></div></div>
+        <p id="bucket-count"></p>
+      </div>
+
+      <div id="bucket-grid"></div>
+    </section>
+
+    <footer>
+      <p>© 2026 [Your Name] · guided here by the brightest star</p>
+    </footer>
+
+  </div>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

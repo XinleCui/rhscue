@@ -1,0 +1,13 @@
+Put your favorite photos in this folder and name them:
+
+1.jpg
+2.jpg
+3.jpg
+4.jpg
+5.jpg
+6.jpg
+
+Then edit the PHOTOS array at the top of js/home.js and write one caption for
+each photo.
+
+To add more photos, add more entries to the PHOTOS array using the same format.

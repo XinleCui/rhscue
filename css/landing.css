@@ -1,0 +1,164 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ---------- Black hole canvas ---------- */
+#bh-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  will-change: transform, filter;
+}
+
+/* ---------- Legacy brightest-star styles ---------- */
+#lucky-star {
+  position: fixed;
+  left: 21%;
+  top: 16%;
+  width: 44px;
+  height: 44px;
+  margin: -22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-tap-highlight-color: transparent;
+  animation: starPulse 3.8s ease-in-out infinite;
+  transition: transform .6s ease, opacity .9s ease;
+}
+
+#lucky-star:hover {
+  transform: scale(1.45);
+  animation-play-state: paused;
+}
+
+#lucky-star .star-core {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 5px; height: 5px;
+  margin: -2.5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 4px 1px #ffffff,
+    0 0 12px 3px rgba(214, 232, 255, .95),
+    0 0 34px 10px rgba(150, 190, 255, .50),
+    0 0 90px 30px rgba(120, 160, 255, .18);
+}
+
+.star-spike {
+  position: absolute;
+  left: 50%; top: 50%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.95) 46%, rgba(255,255,255,.95) 54%, transparent);
+}
+.star-spike.v  { width: 1.5px; height: 86px; margin: -43px -0.75px; }
+.star-spike.h  {
+  height: 1.5px; width: 86px; margin: -0.75px -43px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.95) 46%, rgba(255,255,255,.95) 54%, transparent);
+}
+.star-spike.d1 { width: 1px; height: 42px; margin: -21px -0.5px; transform: rotate(45deg);  opacity: .55; }
+.star-spike.d2 { width: 1px; height: 42px; margin: -21px -0.5px; transform: rotate(-45deg); opacity: .55; }
+
+.star-halo {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 104px; height: 104px;
+  margin: -52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(172,202,255,.20), rgba(172,202,255,.05) 42%, transparent 68%);
+  animation: haloBreath 3.8s ease-in-out infinite;
+}
+
+#lucky-star::after {
+  content: "E N T E R";
+  position: absolute;
+  left: 50%; top: 100%;
+  transform: translateX(-50%);
+  margin-top: 26px;
+  color: rgba(220, 232, 255, .75);
+  font-size: 11px;
+  letter-spacing: .35em;
+  text-indent: .35em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+#lucky-star:hover::after { opacity: 1; }
+
+@keyframes starPulse {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.5); }
+}
+@keyframes haloBreath {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.18); }
+}
+
+/* Legacy star burst */
+#lucky-star.burst {
+  transform: scale(30);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(.55, 0, 1, .45), opacity 1s ease;
+  animation: none;
+}
+
+/* ---------- Legacy bottom hint ---------- */
+#hint {
+  position: fixed;
+  bottom: 6vh;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, .36);
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: .28em;
+  text-indent: .28em;
+  z-index: 4;
+  animation: hintIn 3s ease 1.5s both;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+@keyframes hintIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Warp transition layer ---------- */
+#warp-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 8;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+
+#flash {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  z-index: 9;
+  pointer-events: none;
+}
+
+body.warping { cursor: none; }
+
+@media (max-width: 700px) {
+  #lucky-star { left: 24%; top: 14%; }
+  #hint { letter-spacing: .18em; text-indent: .18em; font-size: 12px; }
+}
