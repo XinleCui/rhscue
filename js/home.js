@@ -16,14 +16,14 @@ const PHOTOS = [
 
 // Places I want to go — add or remove freely
 const DESTINATIONS = [
-  { name: 'Iceland',            note: 'Wait out an aurora night outside Reykjavík' },
-  { name: 'Lake Tekapo, NZ',    note: 'The world’s first international dark-sky reserve' },
-  { name: 'Atacama, Chile',     note: 'The most Martian place on Earth — the Milky Way overhead' },
-  { name: 'Machu Picchu, Peru', note: 'The lost city above the clouds' },
-  { name: 'Lofoten, Norway',    note: 'Fjords, fishing villages, and the midnight sun' },
-  { name: 'Giza, Egypt',        note: 'Watch Orion rise behind the pyramids' },
-  { name: 'Mt. Fuji, Japan',    note: 'One sunrise from the summit' },
-  { name: 'Antarctica',         note: 'The end of the world, and the purest white' }
+  { name: 'Colosseum, Italy',              note: 'To stand inside the echo of ancient Rome' },
+  { name: 'Palace of Versailles, France',  note: 'Gold, mirrors, gardens, and the old theater of power' },
+  { name: 'Mount Fuji, Japan',             note: 'One quiet morning beneath a sacred mountain' },
+  { name: 'Parthenon, Greece',             note: 'Marble, sunlight, and the ruins of forever' },
+  { name: 'Switzerland',                   note: 'Alpine air, clear lakes, and trains through snow' },
+  { name: 'Norway',                        note: 'Fjords, northern light, and the edge of the sea' },
+  { name: 'The Arctic',                    note: 'The northern end of the world, blue and silent' },
+  { name: 'Antarctica',                    note: 'The southern end of the world, white and infinite' }
 ];
 
 /* ============================================================
