@@ -21,8 +21,8 @@
   let blackHole = null;
   let started = false;
 
-  function containRect(imgW, imgH, boxW, boxH) {
-    const scale = Math.min(boxW / imgW, boxH / imgH);
+  function coverRect(imgW, imgH, boxW, boxH) {
+    const scale = Math.max(boxW / imgW, boxH / imgH);
     const w = imgW * scale;
     const h = imgH * scale;
     return {
@@ -57,7 +57,7 @@
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 
     if (image.complete && image.naturalWidth) {
-      draw = containRect(image.naturalWidth, image.naturalHeight, W, H);
+      draw = coverRect(image.naturalWidth, image.naturalHeight, W, H);
       blackHole = computeBlackHole();
     }
   }
@@ -66,7 +66,8 @@
     if (!draw || !blackHole) return;
 
     const angle = reduced ? 0 : time * 0.018;
-    const scale = 1.08;
+    const rotationSafeScale = Math.hypot(W, H) / Math.min(draw.w, draw.h);
+    const scale = Math.max(1.08, rotationSafeScale * 1.02);
     const w = draw.w * scale;
     const h = draw.h * scale;
 
